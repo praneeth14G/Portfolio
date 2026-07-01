@@ -1,4 +1,4 @@
-# Praneeth -- Developer Portfolio
+# Praneeth - Developer Portfolio
 
 A premium, interactive developer portfolio landing page showcasing Computer Science, Software Engineering, and AI/Deep Learning capabilities. Designed with modern aesthetics, dark theme, smooth motion graphics, and 3D card deck animations.
 
