@@ -68,3 +68,37 @@ button:focus {
   animation: marquee 25s linear infinite;
 }
 
+/* Hide Spline branding watermarks */
+a[href*="spline.design"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* GPU-Accelerated Cursor Ripple keyframes and class */
+@keyframes cursor-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.2);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(5.5);
+    opacity: 0;
+  }
+}
+
+.cursor-ripple-ring {
+  position: fixed;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 229, 255, 0.55);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform, opacity;
+  animation: cursor-ripple 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+

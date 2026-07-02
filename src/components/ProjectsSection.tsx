@@ -73,7 +73,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ index, project, totalCards })
         style={{
           scale,
         }}
-        className="rounded-[40px] sm:rounded-[50px] md:rounded-[60px] border-2 border-[#D7E2EA] bg-[#0C0C0C] p-5 sm:p-6 md:p-8 w-full flex flex-col justify-between h-[90%] shadow-2xl relative"
+        className="rounded-3xl border-2 border-[#D7E2EA] bg-[#0C0C0C] p-5 sm:p-6 md:p-8 w-full flex flex-col justify-between h-[90%] shadow-2xl relative"
       >
         {/* Top Row: Info and Live link */}
         <div className="flex flex-row justify-between items-center w-full border-b border-[#D7E2EA]/10 pb-4 md:pb-5">
@@ -117,7 +117,7 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects"
-      className="bg-[#0C0C0C] text-[#D7E2EA] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 pt-20 pb-32 z-20 relative overflow-visible"
+      className="bg-[#0C0C0C] text-[#D7E2EA] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 pt-20 pb-32 z-20 relative overflow-visible scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto w-full">
         {/* Title */}

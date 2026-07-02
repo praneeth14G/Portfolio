@@ -6,7 +6,7 @@ export const ContactSection: React.FC = () => {
   return (
     <section
       id="contact"
-      className="bg-[#0C0C0C] text-[#D7E2EA] px-6 md:px-10 py-24 w-full flex flex-col items-center z-20 relative border-t border-[#D7E2EA]/10"
+      className="bg-[#0C0C0C] text-[#D7E2EA] px-6 md:px-10 py-24 w-full flex flex-col items-center z-20 relative border-t border-[#D7E2EA]/10 scroll-mt-24"
     >
       <div className="max-w-5xl w-full flex flex-col items-center gap-12 sm:gap-16">
         {/* Title */}
