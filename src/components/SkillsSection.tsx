@@ -1,6 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { FadeIn } from './FadeIn';
 import { CardStack } from './ui/card-stack';
+import { 
+  Terminal, 
+  Code2, 
+  Database, 
+  Cpu, 
+  Layout, 
+  Globe, 
+  Palette, 
+  Award, 
+  GitBranch, 
+  PenTool, 
+  Layers 
+} from 'lucide-react';
 
 interface SkillItem {
   id: string;
@@ -36,6 +49,27 @@ const skillItems: SkillItem[] = [
   },
 ];
 
+// Resolves a matching Lucide icon for each skill badge with glowing accents
+const getSkillIcon = (skill: string) => {
+  const s = skill.toLowerCase();
+  if (s.includes('c++') || s === 'c') return <Terminal className="w-3.5 h-3.5 mr-1.5 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300" />;
+  if (s.includes('java') || s.includes('python') || s.includes('javascript') || s.includes('typescript')) {
+    return <Code2 className="w-3.5 h-3.5 mr-1.5 text-purple-400 group-hover:text-purple-300 transition-colors duration-300" />;
+  }
+  if (s.includes('sql') || s.includes('database')) return <Database className="w-3.5 h-3.5 mr-1.5 text-blue-400 group-hover:text-blue-300 transition-colors duration-300" />;
+  if (s.includes('react')) return <Cpu className="w-3.5 h-3.5 mr-1.5 text-[#00E5FF] group-hover:text-cyan-300 transition-colors duration-300" />;
+  if (s.includes('tailwind') || s.includes('css3') || s.includes('html5')) return <Layout className="w-3.5 h-3.5 mr-1.5 text-indigo-400 group-hover:text-indigo-300 transition-colors duration-300" />;
+  if (s.includes('tensorflow') || s.includes('pytorch') || s.includes('scikit') || s.includes('opencv')) {
+    return <Layers className="w-3.5 h-3.5 mr-1.5 text-pink-400 group-hover:text-pink-300 transition-colors duration-300" />;
+  }
+  if (s.includes('flask') || s.includes('socket')) return <Globe className="w-3.5 h-3.5 mr-1.5 text-green-400 group-hover:text-green-300 transition-colors duration-300" />;
+  if (s.includes('figma') || s.includes('photoshop')) return <Palette className="w-3.5 h-3.5 mr-1.5 text-orange-400 group-hover:text-orange-300 transition-colors duration-300" />;
+  if (s.includes('wireframe') || s.includes('prototype')) return <PenTool className="w-3.5 h-3.5 mr-1.5 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300" />;
+  if (s.includes('git')) return <GitBranch className="w-3.5 h-3.5 mr-1.5 text-red-400 group-hover:text-red-300 transition-colors duration-300" />;
+  if (s.includes('linux')) return <Terminal className="w-3.5 h-3.5 mr-1.5 text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300" />;
+  return <Award className="w-3.5 h-3.5 mr-1.5 text-gray-400 group-hover:text-white transition-colors duration-300" />;
+};
+
 export const SkillsSection: React.FC = () => {
   const [cardWidth, setCardWidth] = useState(520);
   const [cardHeight, setCardHeight] = useState(350);
@@ -43,15 +77,12 @@ export const SkillsSection: React.FC = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 640) {
-        // Mobile
         setCardWidth(300);
         setCardHeight(285);
       } else if (window.innerWidth < 768) {
-        // Small screens
         setCardWidth(420);
         setCardHeight(320);
       } else {
-        // Desktop
         setCardWidth(520);
         setCardHeight(350);
       }
@@ -86,13 +117,14 @@ export const SkillsSection: React.FC = () => {
           {item.description}
         </p>
 
-        {/* Badges Container (Increased font size and padding) */}
+        {/* Badges Container (With Lucide Icons and hover styling) */}
         <div className="flex flex-wrap gap-2.5 mt-auto">
           {item.skills.map((skill) => (
             <span
               key={skill}
-              className="px-4 py-2 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-semibold bg-[#D7E2EA]/5 border border-[#D7E2EA]/10 text-[#D7E2EA] transition-all duration-300 hover:scale-105 hover:bg-[#D7E2EA]/10 select-none"
+              className="px-4 py-2 sm:px-5 sm:py-2 rounded-full text-xs sm:text-sm md:text-base font-semibold bg-[#D7E2EA]/5 border border-[#D7E2EA]/10 text-[#D7E2EA] transition-all duration-300 hover:scale-105 hover:bg-[#D7E2EA]/10 hover:border-[#00E5FF]/40 hover:shadow-[0_0_15px_rgba(0,229,255,0.15)] flex items-center select-none cursor-default group/badge"
             >
+              {getSkillIcon(skill)}
               {skill}
             </span>
           ))}
