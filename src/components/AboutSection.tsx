@@ -6,7 +6,7 @@ import { DottedSurface } from './ui/dotted-surface';
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="relative min-h-screen w-full flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 bg-[#0C0C0C] overflow-hidden scroll-mt-24">
+    <section id="about" className="relative min-h-screen w-full flex flex-col justify-center items-center px-5 sm:px-8 md:px-10 py-20 bg-[#0C0C0C] overflow-hidden scroll-mt-24 rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] z-20 -mt-16 sm:-mt-20 md:-mt-24 border-t border-[#D7E2EA]/10 shadow-[0_-15px_30px_rgba(0,0,0,0.8)]">
       {/* 3D Wave Particle Background */}
       <DottedSurface className="absolute inset-0 w-full h-full z-0 opacity-40 pointer-events-none" />
       

@@ -11,8 +11,8 @@ import { User, Code2, Briefcase, Sparkles, FolderKanban, Phone } from 'lucide-re
 
 const navItems = [
   { name: 'About', url: '#about', icon: User },
-  { name: 'Skills', url: '#skills', icon: Code2 },
   { name: 'Experience', url: '#experience', icon: Briefcase },
+  { name: 'Skills', url: '#skills', icon: Code2 },
   { name: 'Services', url: '#services', icon: Sparkles },
   { name: 'Projects', url: '#projects', icon: FolderKanban },
   { name: 'Contact', url: '#contact', icon: Phone }

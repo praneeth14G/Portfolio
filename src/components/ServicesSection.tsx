@@ -40,7 +40,7 @@ export const ServicesSection: React.FC = () => {
   return (
     <section
       id="services"
-      className="bg-white text-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 w-full flex flex-col items-center z-20 relative scroll-mt-24"
+      className="bg-[#F0EDE8] text-[#0C0C0C] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 py-20 sm:py-24 md:py-32 w-full flex flex-col items-center z-20 relative scroll-mt-24"
     >
       <div className="max-w-5xl w-full">
         {/* Title */}

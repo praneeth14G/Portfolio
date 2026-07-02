@@ -117,7 +117,7 @@ export const ProjectsSection: React.FC = () => {
   return (
     <section
       id="projects"
-      className="bg-[#0C0C0C] text-[#D7E2EA] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 pt-20 pb-32 z-20 relative overflow-visible scroll-mt-24"
+      className="bg-[#0C0C0C] text-[#D7E2EA] rounded-t-[40px] sm:rounded-t-[50px] md:rounded-t-[60px] px-5 sm:px-8 md:px-10 pt-36 pb-32 z-20 relative overflow-visible scroll-mt-24"
     >
       <div className="max-w-6xl mx-auto w-full">
         {/* Title */}

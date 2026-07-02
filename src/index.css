@@ -36,10 +36,11 @@ body,
 
 /* Hero Heading Gradient Class */
 .hero-heading {
-  background: linear-gradient(180deg, #646973 0%, #BBCCD7 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #E8EFF5 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.12));
 }
 
 /* Fix for marquee item sizing & smooth layout */
@@ -69,11 +70,23 @@ button:focus {
 }
 
 /* Hide Spline branding watermarks */
-a[href*="spline.design"] {
+a[href*="spline"],
+a[href*="spline.design"],
+div[class*="spline-watermark"],
+#spline-logo,
+[class*="spline"] a,
+a[aria-label*="spline"],
+a[aria-label*="Spline"],
+div[id*="logo"] a,
+#logo {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -9999 !important;
 }
 
 /* GPU-Accelerated Cursor Ripple keyframes and class */
