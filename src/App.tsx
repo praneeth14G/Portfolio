@@ -6,6 +6,7 @@ import { ServicesSection } from './components/ServicesSection';
 import { ProjectsSection } from './components/ProjectsSection';
 import { ContactSection } from './components/ContactSection';
 import { WaterRippleEffect } from './components/WaterRippleEffect';
+import { CustomCursor } from './components/CustomCursor';
 import { NavBar } from './components/ui/tubelight-navbar';
 import { User, Code2, Briefcase, Sparkles, FolderKanban, Phone } from 'lucide-react';
 
@@ -29,7 +30,10 @@ function App() {
 
   return (
     <div className="w-full bg-[#0C0C0C] overflow-x-clip min-h-screen relative">
-      {/* 1. Global GPU-Accelerated Water Ripple Mouse Cursor tracker */}
+      {/* 1. Global Custom Color-Inverting Cursor */}
+      <CustomCursor />
+
+      {/* 2. Global GPU-Accelerated Water Ripple Mouse Cursor tracker */}
       <WaterRippleEffect />
 
       {/* 2. Glassmorphic Tubelight Navigation Bar */}

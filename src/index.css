@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +19,39 @@ body,
   font-family: 'Kanit', sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
+  cursor: none !important;
+}
+
+a,
+button,
+[role="button"],
+input,
+textarea,
+select {
+  cursor: none !important;
+}
+
+/* Display Font Class for background typography */
+.display-name-font {
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+/* Premium topography mesh background with noise grain */
+.hero-mesh-bg {
+  background-color: #080808;
+  background-image: 
+    radial-gradient(circle at center, #1F1F21 0%, #080808 100%);
+  position: relative;
+}
+
+.hero-mesh-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 1;
 }
 
 /* Custom Scrollbar for a premium look */
