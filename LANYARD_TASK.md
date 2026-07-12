@@ -40,6 +40,13 @@ React Bits `<Lanyard />` 3D component (physics-based swinging ID card).
 - Had to fix Lanyard.css: original component ships with `.lanyard-wrapper { height: 100vh }` which broke layout (canvas overflowed hero section, card appeared cut off top-right). Changed to `height: 100%` so it respects the sized parent container in HeroSection.tsx (w-320/380/420 h-420/480/520 responsive classes).
 - Back face (email + phone) uses same composite logic/UV rects as front — not independently re-verified via screenshot (card didn't fully flip during manual drag testing, which is expected physics behavior — it swings like a real lanyard, doesn't spin freely), but composite code is unmodified from the documented react-bits FRONT_UV_RECT/BACK_UV_RECT so should be correct.
 
+## Deployment (2026-07-12)
+- Repo praneeth14G/Portfolio, pushed to origin/main, commits b8181d4 (initial Lanyard integration) then 2eddcc2 (production canvas-size fix).
+- Auto-deploys via Vercel GitHub integration -> live at https://praneeth-portfolio-gamma.vercel.app (no GitHub Pages involved, `has_pages:false`, deployment is Vercel).
+- BUG FOUND + FIXED: in production (minified) builds, @react-three/fiber's internal ResizeObserver sometimes measures the Canvas's container before layout settles, leaving canvas stuck at default 300x150 (invisible). Confirmed via network/canvas-dimension checks on the deployed site, NOT visible in local `vite dev` (only reproduced in `vite build` + `vite preview` / production). Fix: dispatch a `resize` event ~1 frame + 300ms after Lanyard mounts (see useEffect in Lanyard.jsx). Also added `optimizeDeps.exclude: ['@dimforge/rapier3d-compat']` to vite.config.ts (standard practice for react-three-rapier + Vite, unrelated to the actual bug but harmless/recommended).
+- Verified post-fix: canvas resized correctly (577x715 devicePixelRatio-scaled) and both card.glb (2.4MB) and card-front.png fetched successfully on the live production URL.
+- Dead-end investigated and abandoned: initially suspected @dimforge/rapier3d-compat's wasm loading (`new URL(..., import.meta.url)` pattern showed a corrupted `"<deleted>"` placeholder in this sandbox's local node_modules) — turned out irrelevant; the actual `RAPIER.init()` code path embeds the wasm as inline base64, no network fetch involved. Real bug was purely a canvas-sizing race condition.
+
 ## Notes for next session if resumed
 - avatar_bw.jpg (and avatar.jpg, avatar_color.jpg, avatar_temp1/2.jpg) in src/assets are now fully unused anywhere in src — confirmed via grep, safe to delete if desired, left in place for now.
 - HeroSection.tsx no longer uses useState/isHovered — removed cleanly.
