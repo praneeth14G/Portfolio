@@ -1,0 +1,23 @@
+<svg width="500" height="750" viewBox="0 0 500 750" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#141414"/>
+      <stop offset="100%" stop-color="#0C0C0C"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="750" fill="url(#bg)"/>
+  <rect x="16" y="16" width="468" height="718" rx="28" fill="none" stroke="#D7E2EA" stroke-opacity="0.12" stroke-width="2"/>
+
+  <circle cx="250" cy="230" r="70" fill="none" stroke="#00E5FF" stroke-opacity="0.35" stroke-width="2"/>
+  <text x="250" y="245" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="52" fill="#D7E2EA">GP</text>
+
+  <text x="250" y="340" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="30" fill="#D7E2EA">Praneeth Gadipudi</text>
+  <text x="250" y="372" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="18" fill="#00E5FF">Frontend Developer</text>
+
+  <line x1="90" y1="430" x2="410" y2="430" stroke="#D7E2EA" stroke-opacity="0.15" stroke-width="1.5"/>
+
+  <text x="250" y="480" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="14" fill="#D7E2EA" fill-opacity="0.85">praneeth.g147@gmail.com</text>
+  <text x="250" y="506" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="14" fill="#D7E2EA" fill-opacity="0.85">+91 90339 60097</text>
+
+  <text x="250" y="700" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="600" font-size="12" letter-spacing="3" fill="#D7E2EA" fill-opacity="0.4">PORTFOLIO ACCESS</text>
+</svg>

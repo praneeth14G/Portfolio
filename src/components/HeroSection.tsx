@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FadeIn } from './FadeIn';
+import Lanyard from './Lanyard/Lanyard';
 import heroBg from '../assets/hero_bg.jpg';
-import avatarBw from '../assets/avatar_bw.jpg';
+import cardFront from '../assets/lanyard/card-front.png';
+import cardBack from '../assets/lanyard/card-back.svg';
+import gpBand from '../assets/lanyard/gp-band.svg';
 
 export const HeroSection: React.FC = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <section 
       id="home" 
@@ -30,26 +31,18 @@ export const HeroSection: React.FC = () => {
           </h1>
         </div>
 
-        {/* Foreground (Illustration Card showing Grayscale Portrait) */}
+        {/* Foreground (Interactive 3D Lanyard ID Card) */}
         <div className="relative z-10 flex flex-col items-center select-none text-center">
-          {/* Centered Avatar Portrait Card with custom cursor trigger & interactive hover slide-down */}
           <FadeIn delay={0.2} y={30}>
-            <div 
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              className={`w-[210px] h-[210px] sm:w-[250px] sm:h-[250px] md:w-[270px] md:h-[270px] bg-transparent rounded-[36px] overflow-hidden flex items-center justify-center shadow-[0_25px_60px_rgba(0,0,0,0.8)] relative group pointer-events-auto cursor-none select-none transition-transform duration-500 ease-out ${
-                isHovered 
-                  ? 'translate-y-40 sm:translate-y-48 md:translate-y-54' 
-                  : 'translate-y-28 sm:translate-y-36 md:translate-y-40'
-              }`}
-              data-cursor-expand="true"
-              data-cursor-text="Hey, I'm open to work or book a call now.."
-            >
-              {/* Grayscale Base Image (Always visible) */}
-              <img 
-                src={avatarBw} 
-                alt="Praneeth Grayscale Avatar" 
-                className="w-full h-full object-cover select-none pointer-events-none" 
+            <div className="w-[320px] h-[420px] sm:w-[380px] sm:h-[480px] md:w-[420px] md:h-[520px] pointer-events-auto select-none">
+              <Lanyard
+                position={[0, 0, 20]}
+                gravity={[0, -40, 0]}
+                frontImage={cardFront}
+                backImage={cardBack}
+                imageFit="cover"
+                lanyardImage={gpBand}
+                lanyardWidth={1}
               />
             </div>
           </FadeIn>

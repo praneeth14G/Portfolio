@@ -5,6 +5,10 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
+  assetsInclude: ['**/*.glb'],
+  server: {
+    port: process.env.PORT ? Number(process.env.PORT) : 5173,
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
