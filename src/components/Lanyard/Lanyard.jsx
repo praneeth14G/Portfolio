@@ -39,6 +39,23 @@ export default function Lanyard({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // The R3F canvas's internal ResizeObserver occasionally measures the
+  // container before its layout has settled (seen in production builds),
+  // leaving the canvas stuck at the browser default 300x150. Nudging a
+  // resize event after mount forces it to re-measure correctly.
+  useEffect(() => {
+    let id2;
+    const id1 = requestAnimationFrame(() => {
+      id2 = requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
+    });
+    const timeoutId = setTimeout(() => window.dispatchEvent(new Event('resize')), 300);
+    return () => {
+      cancelAnimationFrame(id1);
+      if (id2) cancelAnimationFrame(id2);
+      clearTimeout(timeoutId);
+    };
+  }, []);
+
   return (
     <div className="lanyard-wrapper">
       <Canvas

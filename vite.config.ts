@@ -5,7 +5,10 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  assetsInclude: ['**/*.glb'],
+  assetsInclude: ['**/*.glb', '**/*.wasm'],
+  optimizeDeps: {
+    exclude: ['@dimforge/rapier3d-compat'],
+  },
   server: {
     port: process.env.PORT ? Number(process.env.PORT) : 5173,
   },
