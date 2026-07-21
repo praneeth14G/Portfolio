@@ -20,6 +20,7 @@ A premium, interactive developer portfolio landing page showcasing Computer Scie
 * **Core**: React 18, TypeScript, HTML5, CSS3 (Vanilla CSS)
 * **Styling**: Tailwind CSS
 * **Animations**: Framer Motion
+* **3D**: Three.js, React Three Fiber
 * **Icons**: Lucide React
 * **Build Tool**: Vite
 
